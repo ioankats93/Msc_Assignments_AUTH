@@ -1,0 +1,220 @@
+
+##################################################################################################################################
+# sixth Try
+# dimensions of our images.
+img_width, img_height = 150, 150
+
+train_data_dir = "/home/ioannis/Desktop/clsimage/train"
+validation_data_dir = "/home/ioannis/Desktop/clsimage/validation"
+nb_train_samples = 1534 
+nb_validation_samples = 733
+epochs = 50
+batch_size = 16
+
+if K.image_data_format() == 'channels_first':
+    input_shape = (3, img_width, img_height)
+else:
+    input_shape = (img_width, img_height, 3)
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Flatten())
+model.add(Dense(64))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(3))
+model.add(Activation('sigmoid'))
+
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# this is the augmentation configuration we will use for training
+train_datagen = ImageDataGenerator(
+    #rotation_range =10
+    #vertical_flip = True
+    rescale=1. / 255,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True)
+
+Epoch 49/50
+95/95 [==============================] - 58s 612ms/step - loss: 0.4180 - acc: 0.8178 - val_loss: 0.6081 - val_acc: 0.7768
+Epoch 50/50
+95/95 [==============================] - 58s 611ms/step - loss: 0.4227 - acc: 0.8224 - val_loss: 0.6429 - val_acc: 0.7545
+Model saved successfully to the disk!
+
+##################################################################################################################################
+# Seventh Try SOFTMAX
+# dimensions of our images.
+img_width, img_height = 150, 150
+
+train_data_dir = "/home/ioannis/Desktop/clsimage/train"
+validation_data_dir = "/home/ioannis/Desktop/clsimage/validation"
+nb_train_samples = 1534 
+nb_validation_samples = 733
+epochs = 50
+batch_size = 16
+
+if K.image_data_format() == 'channels_first':
+    input_shape = (3, img_width, img_height)
+else:
+    input_shape = (img_width, img_height, 3)
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Flatten())
+model.add(Dense(64))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(3))
+model.add(Activation('sigmoid'))
+
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# this is the augmentation configuration we will use for training
+train_datagen = ImageDataGenerator(
+    #rotation_range =10
+    #vertical_flip = True
+    rescale=1. / 255,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True)
+
+Epoch 49/50
+95/95 [==============================] - 58s 608ms/step - loss: 0.3819 - acc: 0.8366 - val_loss: 0.5201 - val_acc: 0.7992
+Epoch 50/50
+95/95 [==============================] - 58s 608ms/step - loss: 0.3363 - acc: 0.8671 - val_loss: 0.5959 - val_acc: 0.8061
+##################################################################################################################################
+# dimensions of our images.
+img_width, img_height = 150, 150
+
+train_data_dir = "/home/ioannis/Desktop/clsimage/train"
+validation_data_dir = "/home/ioannis/Desktop/clsimage/validation"
+nb_train_samples = 1534
+nb_validation_samples = 614
+epochs = 50
+batch_size = 16
+
+if K.image_data_format() == 'channels_first':
+    input_shape = (3, img_width, img_height)
+else:
+    input_shape = (img_width, img_height, 3)
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+
+model.add(Flatten())
+model.add(Dense(128))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(3))
+model.add(Activation('sigmoid'))
+
+model.compile(loss='categorical_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+Epoch 49/50
+95/95 [==============================] - 218s 2s/step - loss: 0.7028 - acc: 0.7264 - val_loss: 0.7349 - val_acc: 0.6860
+Epoch 50/50
+95/95 [==============================] - 219s 2s/step - loss: 0.6922 - acc: 0.7316 - val_loss: 0.8348 - val_acc: 0.6810
+
+##################################################################################################################################
+# dimensions of our images.
+img_width, img_height = 224, 224
+
+train_data_dir = "/home/ioannis/Desktop/clsimage/train"
+validation_data_dir = "/home/ioannis/Desktop/clsimage/validation"
+nb_train_samples = 1534
+nb_validation_samples = 733
+epochs = 25
+batch_size = 32
+
+if K.image_data_format() == 'channels_first':
+    input_shape = (3, img_width, img_height)
+else:
+    input_shape = (img_width, img_height, 3)
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Flatten())
+model.add(Dense(128))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(3))
+model.add(Activation('sigmoid'))
+
+model.compile(loss='categorical_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+# this is the augmentation configuration we will use for training
+train_datagen = ImageDataGenerator(
+    #rotation_range =10
+    #vertical_flip = True
+    rescale=1. / 255,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True)
+
+Epoch 99/100
+59/59 [==============================] - 171s 3s/step - loss: 0.5335 - acc: 0.8135 - val_loss: 0.3894 - val_acc: 0.8436
+Epoch 100/100
+59/59 [==============================] - 170s 3s/step - loss: 0.5251 - acc: 0.8044 - val_loss: 0.3328 - val_acc: 0.8667
+
+
+
+
