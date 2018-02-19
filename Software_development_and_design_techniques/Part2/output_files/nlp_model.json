@@ -1,0 +1,2065 @@
+{
+    "model": {
+        "service": {
+            "get": {
+                "request_params": [
+                    {
+                        "name": "id",
+                        "path_param": true,
+                        "required": false
+                    }
+                ],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [
+                            {
+                                "name": "service",
+                                "model_type": true,
+                                "properties": [
+                                    {
+                                        "name": "id",
+                                        "type": "integer",
+                                        "format": "int32"
+                                    },
+                                    {
+                                        "name": "category",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "servicename",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "description",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "date of release",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    {
+                                        "name": "location",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "telephone",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "tag",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "photo",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "cost",
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                ],
+                                "example": {
+                                    "id": 30,
+                                    "category": "Hotel",
+                                    "servicename": "Grand Hotel",
+                                    "description": "Grand hotel near Larisa",
+                                    "date of release": "05/06/2010",
+                                    "location": "Larisa",
+                                    "telephone": "2410228811",
+                                    "email": "grandhotel@info.gr",
+                                    "tag": "hotels",
+                                    "photo": "http://photo.com/myphoto",
+                                    "cost": 1500.1
+                                },
+                                "required": false
+                            }
+                        ],
+                        "links": [],
+                        "param_examples": [],
+                        "message": "service retrieved"
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "the service doesn't exist"
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    {
+                        "name": "service",
+                        "model_type": true,
+                        "properties": [
+                            {
+                                "name": "id",
+                                "type": "integer",
+                                "format": "int32"
+                            },
+                            {
+                                "name": "category",
+                                "type": "string"
+                            },
+                            {
+                                "name": "servicename",
+                                "type": "string"
+                            },
+                            {
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "date of release",
+                                "type": "string",
+                                "format": "date"
+                            },
+                            {
+                                "name": "location",
+                                "type": "string"
+                            },
+                            {
+                                "name": "telephone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "email",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "photo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cost",
+                                "type": "number",
+                                "format": "float"
+                            }
+                        ],
+                        "example": {
+                            "id": 30,
+                            "category": "Hotel",
+                            "servicename": "Grand Hotel",
+                            "description": "Grand hotel near Larisa",
+                            "date of release": "05/06/2010",
+                            "location": "Larisa",
+                            "telephone": "2410228811",
+                            "email": "grandhotel@info.gr",
+                            "tag": "hotels",
+                            "photo": "http://photo.com/myphoto",
+                            "cost": 1500.1
+                        },
+                        "required": false
+                    }
+                ],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [
+                            {
+                                "name": "service",
+                                "model_type": true,
+                                "properties": [
+                                    {
+                                        "name": "id",
+                                        "type": "integer",
+                                        "format": "int32"
+                                    },
+                                    {
+                                        "name": "category",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "servicename",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "description",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "date of release",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    {
+                                        "name": "location",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "telephone",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "tag",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "photo",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "cost",
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                ],
+                                "example": {
+                                    "id": 30,
+                                    "category": "Hotel",
+                                    "servicename": "Grand Hotel",
+                                    "description": "Grand hotel near Larisa",
+                                    "date of release": "05/06/2010",
+                                    "location": "Larisa",
+                                    "telephone": "2410228811",
+                                    "email": "grandhotel@info.gr",
+                                    "tag": "hotels",
+                                    "photo": "http://photo.com/myphoto",
+                                    "cost": 1500.1
+                                },
+                                "required": false
+                            }
+                        ],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            },
+                            {
+                                "operation": "put",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "Successfully created! !"
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": "Not allowed"
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [
+                    {
+                        "name": "service",
+                        "model_type": true,
+                        "properties": [
+                            {
+                                "name": "servicename",
+                                "type": "string"
+                            },
+                            {
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "category",
+                                "type": "string"
+                            }
+                        ],
+                        "example": {
+                            "servicename": "NOLAN",
+                            "description": "3 Michelin stars",
+                            "category": "Restaurant"
+                        },
+                        "required": false
+                    },
+                    {
+                        "name": "description",
+                        "required": false
+                    }
+                ],
+                "non_body_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [
+                            [
+                                {
+                                    "name": "servicename",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "description",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "category",
+                                    "type": "string",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            },
+                            {
+                                "operation": "put",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "servicename": "NOLAN",
+                                "description": "2 Michelin stars",
+                                "category": "Restaurant"
+                            }
+                        ],
+                        "message": "Successfully updated! !"
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "the service doesn't exist"
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [
+                    [
+                        {
+                            "name": "servicename",
+                            "type": "string",
+                            "required": false
+                        },
+                        {
+                            "name": "category",
+                            "type": "string",
+                            "required": false
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "servicename": "Grand Hotel",
+                        "category": "Hotel"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "deleted!"
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "the service doesn't exist"
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {},
+            "resource_roles": {}
+        },
+        "search": {
+            "get": {
+                "request_params": [
+                    [
+                        {
+                            "name": "servicename",
+                            "type": "string",
+                            "required": false
+                        },
+                        {
+                            "name": "category",
+                            "type": "string",
+                            "required": false
+                        }
+                    ],
+                    [
+                        {
+                            "name": "email",
+                            "type": "string",
+                            "required": false
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "servicename": "Grand Hotel",
+                        "category": "Hotel"
+                    },
+                    {
+                        "email": "ioan@ece.auth.gr"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [
+                            [
+                                {
+                                    "name": "servicename",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "price",
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "servicename": "Grand Hotel",
+                                "price": 1500
+                            }
+                        ],
+                        "message": ""
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "search"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "the service doesn't exist"
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "user"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "user successfully found"
+                    }
+                },
+                "description": "- \tThe user is able to search for services in the website using servicename and/or category filter, view their general details\n- \t\tThe user is able to search for services in the website using servicename and/or category filter, view their general details\n- \t\tThe user is able to search for other user in the website using email, view their general details"
+            },
+            "post": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [],
+                "non_body_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {},
+            "resource_roles": {}
+        },
+        "rate": {
+            "get": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    [
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "required": false
+                        },
+                        {
+                            "name": "rate",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": false
+                        },
+                        {
+                            "name": "rate_id",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": false
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "date": "8/2/2017 12:32",
+                        "rate": 4,
+                        "rate_id": 35
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "rate successfully added"
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": "service doesn't exist"
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [
+                    [
+                        {
+                            "name": "id",
+                            "type": "integer",
+                            "format": "int32",
+                            "path_param": true,
+                            "required": true
+                        }
+                    ],
+                    [
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "required": true
+                        },
+                        {
+                            "name": "rate",
+                            "type": "number",
+                            "format": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "rate_id",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": true
+                        }
+                    ]
+                ],
+                "non_body_params": [],
+                "request_examples": [
+                    {
+                        "id": 189
+                    },
+                    {
+                        "date": "8/2/2017 12:35",
+                        "rate": 4.6,
+                        "rate_id": 35
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": "rate updated"
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {
+                "hierarchy_resource": "service",
+                "linking_parameter": "id"
+            },
+            "resource_roles": {}
+        },
+        "payment": {
+            "get": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    [
+                        {
+                            "name": "amount",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": false
+                        },
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date",
+                            "required": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "required": false
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "amount": 1200,
+                        "date": "12/2/2018",
+                        "type": "credit"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "booking"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "Bad Request": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "payment"
+                            },
+                            {
+                                "operation": "get",
+                                "resource": "booking"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "wrong amount"
+                    }
+                },
+                "description": "- \tPossible payment options are 'credit', 'paypal'"
+            },
+            "put": {
+                "request_params": [],
+                "non_body_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {
+                "hierarchy_resource": "booking",
+                "linking_parameter": "id"
+            },
+            "resource_roles": {}
+        },
+        "booking": {
+            "get": {
+                "request_params": [
+                    [
+                        {
+                            "name": "id",
+                            "type": "integer",
+                            "format": "int32",
+                            "path_param": true,
+                            "required": true
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "id": 150
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [
+                            [
+                                {
+                                    "name": "amount",
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "required": true
+                                },
+                                {
+                                    "name": "date",
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "required": true
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "string",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "put",
+                                "resource": "booking"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "amount": 150,
+                                "date": "18/2/2018 12:32",
+                                "type": "credit"
+                            }
+                        ],
+                        "message": "booking found"
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    [
+                        {
+                            "name": "amount",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": true
+                        },
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "required": true
+                        },
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "required": true
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "amount": 150,
+                        "date": "18/2/2018 12:32",
+                        "type": "credit"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "payment"
+                            },
+                            {
+                                "operation": "get",
+                                "resource": "booking"
+                            },
+                            {
+                                "operation": "delete",
+                                "resource": "booking"
+                            },
+                            {
+                                "operation": "put",
+                                "resource": "booking"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "booking created successfully"
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [
+                    {
+                        "name": "id",
+                        "path_param": true,
+                        "required": false
+                    },
+                    [
+                        {
+                            "name": "booking id",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": true
+                        },
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date",
+                            "required": true
+                        }
+                    ]
+                ],
+                "non_body_params": [],
+                "request_examples": [
+                    {
+                        "booking id": 3433,
+                        "date": "05/06/2010"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "payment"
+                            },
+                            {
+                                "operation": "delete",
+                                "resource": "booking"
+                            },
+                            {
+                                "operation": "put",
+                                "resource": "booking"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "booking updated"
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "search"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "booking canceled"
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {},
+            "resource_roles": {}
+        },
+        "comment": {
+            "get": {
+                "request_params": [
+                    [
+                        {
+                            "name": "id",
+                            "type": "integer",
+                            "format": "int32",
+                            "path_param": true,
+                            "required": true
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "id": 189
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [
+                            [
+                                {
+                                    "name": "date",
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "required": true
+                                },
+                                {
+                                    "name": "comment",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "comment_id",
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "put",
+                                "resource": "comment"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "date": "8/2/2017 12:32",
+                                "comment": "a comment",
+                                "comment_id": 189
+                            }
+                        ],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    [
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "required": false
+                        },
+                        {
+                            "name": "comment",
+                            "type": "string",
+                            "required": false
+                        },
+                        {
+                            "name": "comment_id",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": false
+                        }
+                    ]
+                ],
+                "request_examples": [
+                    {
+                        "date": "8/2/2017 12:32",
+                        "comment": "a comment",
+                        "comment_id": 15
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "comment"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "Not Found": {
+                        "params": [],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": "Can not comment"
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [
+                    [
+                        {
+                            "name": "id",
+                            "type": "integer",
+                            "format": "int32",
+                            "path_param": true,
+                            "required": true
+                        }
+                    ],
+                    [
+                        {
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "required": true
+                        },
+                        {
+                            "name": "comment",
+                            "type": "string",
+                            "required": true
+                        },
+                        {
+                            "name": "comment_id",
+                            "type": "integer",
+                            "format": "int32",
+                            "required": true
+                        }
+                    ]
+                ],
+                "non_body_params": [],
+                "request_examples": [
+                    {
+                        "id": 189
+                    },
+                    {
+                        "date": "9/2/2017 12:32",
+                        "comment": "2 comment",
+                        "comment_id": 189
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    },
+                    "OK": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": "comment updated"
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {
+                "hierarchy_resource": "service",
+                "linking_parameter": "id"
+            },
+            "resource_roles": {}
+        },
+        "user": {
+            "get": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [
+                            {
+                                "name": "user",
+                                "model_type": true,
+                                "properties": [
+                                    {
+                                        "name": "username",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "first name",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "last name",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "password",
+                                        "type": "string",
+                                        "format": "password",
+                                        "minLength": 8
+                                    },
+                                    {
+                                        "name": "id",
+                                        "type": "integer",
+                                        "format": "int32"
+                                    },
+                                    {
+                                        "name": "date of birth",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    {
+                                        "name": "sex",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "photo",
+                                        "type": "string"
+                                    }
+                                ],
+                                "example": {
+                                    "username": "Ioa",
+                                    "first name": "Ioannis",
+                                    "last name": "Katsikavelas",
+                                    "email": "katsikave@ece.auth.gr",
+                                    "id": 250,
+                                    "date of birth": "12/02/1993",
+                                    "sex": "male",
+                                    "photo": "http://photo.com/myphoto"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "post": {
+                "request_params": [
+                    {
+                        "name": "user",
+                        "model_type": true,
+                        "properties": [
+                            {
+                                "name": "username",
+                                "type": "string"
+                            },
+                            {
+                                "name": "first name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "last name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "email",
+                                "type": "string"
+                            },
+                            {
+                                "name": "password",
+                                "type": "string",
+                                "format": "password",
+                                "minLength": 8
+                            },
+                            {
+                                "name": "id",
+                                "type": "integer",
+                                "format": "int32"
+                            },
+                            {
+                                "name": "date of birth",
+                                "type": "string",
+                                "format": "date"
+                            },
+                            {
+                                "name": "sex",
+                                "type": "string"
+                            },
+                            {
+                                "name": "photo",
+                                "type": "string"
+                            }
+                        ],
+                        "example": {
+                            "username": "Ioa",
+                            "first name": "Ioannis",
+                            "last name": "Katsikavelas",
+                            "email": "katsikave@ece.auth.gr",
+                            "id": 250,
+                            "date of birth": "12/02/1993",
+                            "sex": "male",
+                            "photo": "http://photo.com/myphoto"
+                        },
+                        "required": true
+                    }
+                ],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [
+                            [
+                                {
+                                    "name": "username",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "first name",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "last name",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "email",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "password",
+                                    "type": "string",
+                                    "format": "password",
+                                    "minLength": 8,
+                                    "required": true
+                                },
+                                {
+                                    "name": "id",
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "required": true
+                                },
+                                {
+                                    "name": "date of birth",
+                                    "type": "string",
+                                    "format": "date",
+                                    "required": true
+                                },
+                                {
+                                    "name": "sex",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "photo",
+                                    "type": "string",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "post",
+                                "resource": "user"
+                            },
+                            {
+                                "operation": "get",
+                                "resource": "user"
+                            },
+                            {
+                                "operation": "get",
+                                "resource": "search"
+                            },
+                            {
+                                "operation": "post",
+                                "resource": "booking"
+                            },
+                            {
+                                "operation": "post",
+                                "resource": "comment"
+                            },
+                            {
+                                "operation": "post",
+                                "resource": "rate"
+                            },
+                            {
+                                "operation": "delete",
+                                "resource": "service"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "username": "Ioa",
+                                "first name": "Ioannis",
+                                "last name": "Katsikavelas",
+                                "email": "katsikave@ece.auth.gr",
+                                "id": 250,
+                                "date of birth": "12/02/1993",
+                                "sex": "male",
+                                "photo": "http://photo.com/myphoto"
+                            }
+                        ],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "put": {
+                "request_params": [
+                    [
+                        {
+                            "name": "username",
+                            "type": "string",
+                            "required": true
+                        }
+                    ]
+                ],
+                "non_body_params": [],
+                "request_examples": [
+                    {
+                        "username": "Ioa"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "params": [
+                            [
+                                {
+                                    "name": "username",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "first name",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "last name",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "email",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "password",
+                                    "type": "string",
+                                    "format": "password",
+                                    "minLength": 8,
+                                    "required": true
+                                },
+                                {
+                                    "name": "id",
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "required": true
+                                },
+                                {
+                                    "name": "date of birth",
+                                    "type": "string",
+                                    "format": "date",
+                                    "required": true
+                                },
+                                {
+                                    "name": "sex",
+                                    "type": "string",
+                                    "required": true
+                                },
+                                {
+                                    "name": "photo",
+                                    "type": "string",
+                                    "required": true
+                                }
+                            ]
+                        ],
+                        "links": [
+                            {
+                                "operation": "get",
+                                "resource": "user"
+                            }
+                        ],
+                        "param_examples": [
+                            {
+                                "username": "Ioannis93",
+                                "first name": "Ioannis",
+                                "last name": "Katsikavelas",
+                                "email": "katsikave@ece.auth.gr",
+                                "id": 250,
+                                "date of birth": "12/02/1993",
+                                "sex": "male",
+                                "photo": "http://photo.com/myphoto"
+                            }
+                        ],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "delete": {
+                "request_params": [],
+                "request_examples": [],
+                "responses": {
+                    "default": {
+                        "params": [],
+                        "links": [],
+                        "param_examples": [],
+                        "message": ""
+                    }
+                },
+                "description": ""
+            },
+            "resource_hierarchy": {},
+            "resource_roles": {}
+        }
+    },
+    "resource_graph": {
+        "service": [
+            {
+                "operation": "create",
+                "resource": "service"
+            },
+            {
+                "operation": "update",
+                "resource": "service"
+            }
+        ],
+        "search": [
+            {
+                "operation": "view",
+                "resource": "service"
+            },
+            {
+                "operation": "request",
+                "resource": "search"
+            },
+            {
+                "operation": "view",
+                "resource": "user"
+            }
+        ],
+        "rate": [
+            {
+                "operation": "review",
+                "resource": "service"
+            }
+        ],
+        "payment": [
+            {
+                "operation": "review",
+                "resource": "booking"
+            },
+            {
+                "operation": "submit",
+                "resource": "payment"
+            }
+        ],
+        "booking": [
+            {
+                "operation": "submit",
+                "resource": "payment"
+            },
+            {
+                "operation": "review",
+                "resource": "booking"
+            },
+            {
+                "operation": "cancel",
+                "resource": "booking"
+            },
+            {
+                "operation": "update",
+                "resource": "booking"
+            },
+            {
+                "operation": "request",
+                "resource": "search"
+            }
+        ],
+        "comment": [
+            {
+                "operation": "review",
+                "resource": "comment"
+            },
+            {
+                "operation": "update",
+                "resource": "comment"
+            },
+            {
+                "operation": "search",
+                "resource": "service"
+            }
+        ],
+        "user": [
+            {
+                "operation": "create",
+                "resource": "user"
+            },
+            {
+                "operation": "view",
+                "resource": "user"
+            },
+            {
+                "operation": "request",
+                "resource": "search"
+            },
+            {
+                "operation": "make",
+                "resource": "booking"
+            },
+            {
+                "operation": "make",
+                "resource": "comment"
+            },
+            {
+                "operation": "make",
+                "resource": "rate"
+            },
+            {
+                "operation": "remove",
+                "resource": "service"
+            },
+            {
+                "operation": "view",
+                "resource": "service"
+            }
+        ]
+    },
+    "state_graph": {
+        "service remove service from site (deleted!)": {
+            "operation": "delete",
+            "resource": "service",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "create",
+                    "operation": "post"
+                }
+            ],
+            "http_state": "remove service from site (OK)",
+            "natural_state": "remove service from site (deleted!)",
+            "code": "OK"
+        },
+        "service add service to site (Successfully created! !)": {
+            "operation": "post",
+            "resource": "service",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "create",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "add service to site (OK)",
+            "natural_state": "add service to site (Successfully created! !)",
+            "code": "OK"
+        },
+        "service update service (Successfully updated! !)": {
+            "operation": "put",
+            "resource": "service",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "create",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "update service (OK)",
+            "natural_state": "update service (Successfully updated! !)",
+            "code": "OK"
+        },
+        "service service doesn't exist (the service doesn't exist)": {
+            "operation": "delete",
+            "resource": "service",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "create",
+                    "operation": "post"
+                }
+            ],
+            "http_state": "service doesn't exist (Not Found)",
+            "natural_state": "service doesn't exist (the service doesn't exist)",
+            "code": "Not Found"
+        },
+        "search Search for a service (default response)": {
+            "operation": "get",
+            "resource": "search",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "view",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "Search for a service (default)",
+            "natural_state": "Search for a service (default response)",
+            "code": "default"
+        },
+        "search Search for a service that does not exist (the service doesn't exist)": {
+            "operation": "get",
+            "resource": "search",
+            "links": [
+                {
+                    "natural_resource_name": "search",
+                    "path": "search",
+                    "natural_verb": "request",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "Search for a service that does not exist (Not Found)",
+            "natural_state": "Search for a service that does not exist (the service doesn't exist)",
+            "code": "Not Found"
+        },
+        "search Search for a user (user successfully found)": {
+            "operation": "get",
+            "resource": "search",
+            "links": [
+                {
+                    "natural_resource_name": "user",
+                    "path": "user",
+                    "natural_verb": "view",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "Search for a user (OK)",
+            "natural_state": "Search for a user (user successfully found)",
+            "code": "OK"
+        },
+        "rate rate a service (rate successfully added)": {
+            "operation": "post",
+            "resource": "rate",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "review",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "rate a service (OK)",
+            "natural_state": "rate a service (rate successfully added)",
+            "code": "OK"
+        },
+        "payment pay for a booking (default response)": {
+            "operation": "post",
+            "resource": "payment",
+            "links": [
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "review",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "pay for a booking (default)",
+            "natural_state": "pay for a booking (default response)",
+            "code": "default"
+        },
+        "payment pay for booking less or more money (wrong amount)": {
+            "operation": "post",
+            "resource": "payment",
+            "links": [
+                {
+                    "natural_resource_name": "payment",
+                    "path": "payment",
+                    "natural_verb": "submit",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "review",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "pay for booking less or more money (Bad Request)",
+            "natural_state": "pay for booking less or more money (wrong amount)",
+            "code": "Bad Request"
+        },
+        "booking book a service (booking created successfully)": {
+            "operation": "post",
+            "resource": "booking",
+            "links": [
+                {
+                    "natural_resource_name": "payment",
+                    "path": "payment",
+                    "natural_verb": "submit",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "review",
+                    "operation": "get"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "cancel",
+                    "operation": "delete"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "book a service (OK)",
+            "natural_state": "book a service (booking created successfully)",
+            "code": "OK"
+        },
+        "booking cancel submitted booking (booking canceled)": {
+            "operation": "delete",
+            "resource": "booking",
+            "links": [
+                {
+                    "natural_resource_name": "search",
+                    "path": "search",
+                    "natural_verb": "request",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "cancel submitted booking (OK)",
+            "natural_state": "cancel submitted booking (booking canceled)",
+            "code": "OK"
+        },
+        "booking review booking (booking found)": {
+            "operation": "get",
+            "resource": "booking",
+            "links": [
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "review booking (OK)",
+            "natural_state": "review booking (booking found)",
+            "code": "OK"
+        },
+        "booking update unpaid service (booking updated)": {
+            "operation": "put",
+            "resource": "booking",
+            "links": [
+                {
+                    "natural_resource_name": "payment",
+                    "path": "payment",
+                    "natural_verb": "submit",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "cancel",
+                    "operation": "delete"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "update unpaid service (OK)",
+            "natural_state": "update unpaid service (booking updated)",
+            "code": "OK"
+        },
+        "comment comment a service (default response)": {
+            "operation": "post",
+            "resource": "comment",
+            "links": [
+                {
+                    "natural_resource_name": "comment",
+                    "path": "comment",
+                    "natural_verb": "review",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "comment a service (default)",
+            "natural_state": "comment a service (default response)",
+            "code": "default"
+        },
+        "comment review comment (default response)": {
+            "operation": "get",
+            "resource": "comment",
+            "links": [
+                {
+                    "natural_resource_name": "comment",
+                    "path": "comment",
+                    "natural_verb": "update",
+                    "operation": "put"
+                }
+            ],
+            "http_state": "review comment (default)",
+            "natural_state": "review comment (default response)",
+            "code": "default"
+        },
+        "comment unauthorized comment (Can not comment)": {
+            "operation": "post",
+            "resource": "comment",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "search",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "unauthorized comment (Not Found)",
+            "natural_state": "unauthorized comment (Can not comment)",
+            "code": "Not Found"
+        },
+        "user new user (default response)": {
+            "operation": "post",
+            "resource": "user",
+            "links": [
+                {
+                    "natural_resource_name": "user",
+                    "path": "user",
+                    "natural_verb": "create",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "user",
+                    "path": "user",
+                    "natural_verb": "view",
+                    "operation": "get"
+                },
+                {
+                    "natural_resource_name": "search",
+                    "path": "search",
+                    "natural_verb": "request",
+                    "operation": "get"
+                },
+                {
+                    "natural_resource_name": "booking",
+                    "path": "booking",
+                    "natural_verb": "make",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "comment",
+                    "path": "comment",
+                    "natural_verb": "make",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "rate",
+                    "path": "rate",
+                    "natural_verb": "make",
+                    "operation": "post"
+                },
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "remove",
+                    "operation": "delete"
+                }
+            ],
+            "http_state": "new user (default)",
+            "natural_state": "new user (default response)",
+            "code": "default"
+        },
+        "user update user (default response)": {
+            "operation": "put",
+            "resource": "user",
+            "links": [
+                {
+                    "natural_resource_name": "user",
+                    "path": "user",
+                    "natural_verb": "view",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "update user (default)",
+            "natural_state": "update user (default response)",
+            "code": "default"
+        },
+        "user retrieve user (default response)": {
+            "operation": "get",
+            "resource": "user",
+            "links": [
+                {
+                    "natural_resource_name": "service",
+                    "path": "service",
+                    "natural_verb": "view",
+                    "operation": "get"
+                }
+            ],
+            "http_state": "retrieve user (default)",
+            "natural_state": "retrieve user (default response)",
+            "code": "default"
+        }
+    }
+}

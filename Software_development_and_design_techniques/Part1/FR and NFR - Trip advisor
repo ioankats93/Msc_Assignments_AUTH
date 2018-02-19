@@ -1,0 +1,48 @@
+## FUNCTIONAL REQUIREMETNS - A functional requirement defines a function of a system or its component
+
+The user can make a profile
+The user can update his profile
+The user can edit his profile
+The user can view profiles of other users
+
+The user can upload a photo 
+The user can view photos of other users
+The user can write a comment
+The user can write a review on a hotel, restaurant or attraction
+The user can read comments of other users
+
+The user can search a service related to trips
+The user can find informations about related trips
+The user can find telephone number for Restaurants and Hotels
+The user can find the Website for Restaurants and Hotels
+The user can find contact email for Restaurants and Hotels
+
+The user can make a registration by google or facebook account
+The user can log in and log out at any time
+
+The user can change the language of the application
+The user can change the metric system of the application
+
+The user can set places on the map that he traveled or wants to travel 
+The user can edit places on the map that he traveled or wants to travel 
+
+The user can set alerts regarding the site 
+The user can edit alerts regarding the site
+
+The user can download maps and reviews of every city
+The user can feedback the application
+
+The user can browse among Top destinations
+The user can browse among recently viewed places
+
+The User can make a booking 
+
+
+
+## NON FUNCTIONAL REQUIRMENTS - A non-functional requirement (NFR) is a requirement that specifies criteria that can ## be used to judge the operation of a system, rather than specific behaviors
+
+The application should be able to to work on different operating mobile systems.
+System must have less than 10 hours downtime per year (99.9 % uptime)
+Moditified data in a database should be updated for all users accessing it within 2 seconds.
+The application should support Online-Backup
+The response time of the application should be about 0.1 second

@@ -1,0 +1,561 @@
+basePath: /v1
+definitions:
+    booking_delete_200_response:
+        type: object
+        x-links:
+        - {operation: get, path: /search}
+    booking_get_200_response:
+        example:
+        - {amount: 150, date: '18/2/2018 12:32', type: credit}
+        properties:
+            amount: {format: int32, type: integer}
+            date: {format: date-time, type: string}
+            type: {type: string}
+        required: [amount, date, type]
+        type: object
+        x-links:
+        - {operation: put, path: '/booking/{booking_id}'}
+    booking_post_200_response:
+        type: object
+        x-links:
+        - {operation: post, path: '/booking/{booking_id}/payment'}
+        - {operation: get, path: '/booking/{booking_id}'}
+        - {operation: delete, path: '/booking/{booking_id}'}
+        - {operation: put, path: '/booking/{booking_id}'}
+    booking_post_request_body:
+        example:
+        - {amount: 150, date: '18/2/2018 12:32', type: credit}
+        properties:
+            amount: {format: int32, type: integer}
+            date: {format: date-time, type: string}
+            type: {type: string}
+        required: [amount, date, type]
+        type: object
+    booking_put_200_response:
+        type: object
+        x-links:
+        - {operation: post, path: '/booking/{booking_id}/payment'}
+        - {operation: delete, path: '/booking/{booking_id}'}
+        - {operation: put, path: '/booking/{booking_id}'}
+    booking_put_request_body:
+        example:
+        - {booking id: 3433, date: 05/06/2010}
+        properties:
+            booking id: {format: int32, type: integer}
+            date: {format: date, type: string}
+        required: [booking id, date]
+        type: object
+    comment_get_default_response:
+        example:
+        - {comment: a comment, comment_id: 189, date: '8/2/2017 12:32'}
+        properties:
+            comment: {type: string}
+            comment_id: {format: int32, type: integer}
+            date: {format: date-time, type: string}
+        required: [date, comment, comment_id]
+        type: object
+        x-links:
+        - {operation: put, path: '/service/{service_id}/comment/{comment_id}'}
+    comment_post_404_response:
+        type: object
+        x-links:
+        - {operation: get, path: '/service/{service_id}'}
+    comment_post_default_response:
+        type: object
+        x-links:
+        - {operation: get, path: '/service/{service_id}/comment/{comment_id}'}
+    comment_post_request_body:
+        example:
+        - {comment: a comment, comment_id: 15, date: '8/2/2017 12:32'}
+        properties:
+            comment: {type: string}
+            comment_id: {format: int32, type: integer}
+            date: {format: date-time, type: string}
+        type: object
+    comment_put_request_body:
+        example:
+        - {id: 189}
+        - {comment: 2 comment, comment_id: 189, date: '9/2/2017 12:32'}
+        properties:
+            comment: {type: string}
+            comment_id: {format: int32, type: integer}
+            date: {format: date-time, type: string}
+            id: {format: int32, type: integer}
+        required: [id, date, comment, comment_id]
+        type: object
+    payment_post_400_response:
+        type: object
+        x-links:
+        - {operation: post, path: '/booking/{booking_id}/payment'}
+        - {operation: get, path: '/booking/{booking_id}'}
+    payment_post_default_response:
+        type: object
+        x-links:
+        - {operation: get, path: '/booking/{booking_id}'}
+    payment_post_request_body:
+        example:
+        - {amount: 1200, date: 12/2/2018, type: credit}
+        properties:
+            amount: {format: int32, type: integer}
+            date: {format: date, type: string}
+            type: {type: string}
+        type: object
+    rate_post_200_response:
+        type: object
+        x-links:
+        - {operation: get, path: '/service/{service_id}'}
+    rate_post_request_body:
+        example:
+        - {date: '8/2/2017 12:32', rate: 4, rate_id: 35}
+        properties:
+            date: {format: date-time, type: string}
+            rate: {format: int32, type: integer}
+            rate_id: {format: int32, type: integer}
+        type: object
+    rate_put_request_body:
+        example:
+        - {id: 189}
+        - {date: '8/2/2017 12:35', rate: 4.6, rate_id: 35}
+        properties:
+            date: {format: date-time, type: string}
+            id: {format: int32, type: integer}
+            rate: {format: float, type: number}
+            rate_id: {format: int32, type: integer}
+        required: [id, date, rate, rate_id]
+        type: object
+    search_get_200_response:
+        type: object
+        x-links:
+        - {operation: get, path: '/user/{username}'}
+    search_get_404_response:
+        type: object
+        x-links:
+        - {operation: get, path: /search}
+    search_get_default_response:
+        example:
+        - {price: 1500, servicename: Grand Hotel}
+        properties:
+            price: {format: int32, type: integer}
+            servicename: {type: string}
+        required: [servicename, price]
+        type: object
+        x-links:
+        - {operation: get, path: '/service/{service_id}'}
+    ? !!python/object/new:textblob.blob.Word
+        args: [service]
+        state: &id001
+            pos_tag: NN
+            string: !!python/object/new:textblob.blob.Word
+                args: [service]
+                state: {pos_tag: null, string: service}
+    :   example:
+        - {category: Hotel, cost: 1500.1, date of release: 05/06/2010, description: Grand
+                hotel near Larisa, email: grandhotel@info.gr, id: 30, location: Larisa,
+            photo: 'http://photo.com/myphoto', servicename: Grand Hotel, tag: hotels,
+            telephone: '2410228811'}
+        properties:
+            category: {type: string}
+            cost: {format: float, type: number}
+            date of release: {format: date, type: string}
+            description: {type: string}
+            email: {type: string}
+            id: {format: int32, type: integer}
+            location: {type: string}
+            photo: {type: string}
+            servicename: {type: string}
+            tag: {type: string}
+            telephone: {type: string}
+        type: object
+    service_delete_200_response:
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+    service_delete_404_response:
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+    service_get_200_response:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [service]
+                state:
+                    pos_tag: NN
+                    string: !!python/object/new:textblob.blob.Word
+                        args: [service]
+                        state: {pos_tag: null, string: service}
+            : {$ref: '#/definitions/service'}
+        type: object
+    service_get_404_response:
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+    service_post_200_response:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [service]
+                state:
+                    pos_tag: NN
+                    string: !!python/object/new:textblob.blob.Word
+                        args: [service]
+                        state: {pos_tag: null, string: service}
+            : {$ref: '#/definitions/service'}
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+        - {operation: put, path: /service}
+    service_post_request_body:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [service]
+                state: *id001
+            : {$ref: '#/definitions/service'}
+        type: object
+    service_put_200_response:
+        example:
+        - {category: Restaurant, description: 2 Michelin stars, servicename: NOLAN}
+        properties:
+            category: {type: string}
+            description: {type: string}
+            servicename: {type: string}
+        required: [servicename, description, category]
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+        - {operation: put, path: /service}
+    service_put_404_response:
+        type: object
+        x-links:
+        - {operation: post, path: /service}
+    service_put_request_body:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [description]
+                state:
+                    pos_tag: NN
+                    string: !!python/object/new:textblob.blob.Word
+                        args: [description]
+                        state: {pos_tag: null, string: description}
+            : {type: string}
+            ? !!python/object/new:textblob.blob.Word
+                args: [service]
+                state:
+                    pos_tag: NN
+                    string: !!python/object/new:textblob.blob.Word
+                        args: [service]
+                        state: {pos_tag: null, string: service}
+            : {$ref: '#/definitions/service'}
+        type: object
+    ? !!python/object/new:textblob.blob.Word
+        args: [user]
+        state: &id003
+            pos_tag: NN
+            string: !!python/object/new:textblob.blob.Word
+                args: [user]
+                state: {pos_tag: null, string: user}
+    :   example:
+        - {date of birth: 12/02/1993, email: katsikave@ece.auth.gr, first name: Ioannis,
+            id: 250, last name: Katsikavelas, photo: 'http://photo.com/myphoto', sex: male,
+            username: Ioa}
+        properties:
+            date of birth: {format: date, type: string}
+            email: {type: string}
+            first name: {type: string}
+            id: {format: int32, type: integer}
+            last name: {type: string}
+            password: {format: password, minLength: 8, type: string}
+            photo: {type: string}
+            sex: {type: string}
+            username: {type: string}
+        type: object
+    user_get_default_response:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [user]
+                state: &id002
+                    pos_tag: NN
+                    string: !!python/object/new:textblob.blob.Word
+                        args: [user]
+                        state: {pos_tag: null, string: user}
+            : {$ref: '#/definitions/user'}
+        required:
+        - !!python/object/new:textblob.blob.Word
+            args: [user]
+            state: *id002
+        type: object
+        x-links:
+        - {operation: get, path: '/service/{service_id}'}
+    user_post_default_response:
+        example:
+        - {date of birth: 12/02/1993, email: katsikave@ece.auth.gr, first name: Ioannis,
+            id: 250, last name: Katsikavelas, photo: 'http://photo.com/myphoto', sex: male,
+            username: Ioa}
+        properties:
+            date of birth: {format: date, type: string}
+            email: {type: string}
+            first name: {type: string}
+            id: {format: int32, type: integer}
+            last name: {type: string}
+            password: {format: password, minLength: 8, type: string}
+            photo: {type: string}
+            sex: {type: string}
+            username: {type: string}
+        required: [username, first name, last name, email, password, id, date of birth,
+            sex, photo]
+        type: object
+        x-links:
+        - {operation: post, path: /user}
+        - {operation: get, path: '/user/{username}'}
+        - {operation: get, path: /search}
+        - {operation: post, path: /booking}
+        - {operation: post, path: '/service/{service_id}/comment'}
+        - {operation: post, path: '/service/{service_id}/rate'}
+        - {operation: delete, path: /service}
+    user_post_request_body:
+        properties:
+            ? !!python/object/new:textblob.blob.Word
+                args: [user]
+                state: *id003
+            : {$ref: '#/definitions/user'}
+        required:
+        - !!python/object/new:textblob.blob.Word
+            args: [user]
+            state: *id003
+        type: object
+    user_put_default_response:
+        example:
+        - {date of birth: 12/02/1993, email: katsikave@ece.auth.gr, first name: Ioannis,
+            id: 250, last name: Katsikavelas, photo: 'http://photo.com/myphoto', sex: male,
+            username: Ioannis93}
+        properties:
+            date of birth: {format: date, type: string}
+            email: {type: string}
+            first name: {type: string}
+            id: {format: int32, type: integer}
+            last name: {type: string}
+            password: {format: password, minLength: 8, type: string}
+            photo: {type: string}
+            sex: {type: string}
+            username: {type: string}
+        required: [username, first name, last name, email, password, id, date of birth,
+            sex, photo]
+        type: object
+        x-links:
+        - {operation: get, path: '/user/{username}'}
+    user_put_request_body:
+        example:
+        - {username: Ioa}
+        properties:
+            username: {type: string}
+        required: [username]
+        type: object
+host: localhost
+info: {description: Demo, termsOfService: '', title: Test API, version: '1'}
+paths:
+    /booking:
+        post:
+            parameters:
+            -   in: body
+                name: booking_post_request_body
+                required: true
+                schema: {$ref: '#/definitions/booking_post_request_body'}
+            responses:
+                '200':
+                    description: booking created successfully
+                    schema: {$ref: '#/definitions/booking_post_200_response'}
+    /booking/{booking_id}:
+        delete:
+            parameters:
+            - {format: int32, in: path, name: booking_id, required: true, type: integer}
+            responses:
+                '200':
+                    description: booking canceled
+                    schema: {$ref: '#/definitions/booking_delete_200_response'}
+        get:
+            parameters:
+            - {format: int32, in: path, name: booking_id, required: true, type: integer}
+            responses:
+                '200':
+                    description: booking found
+                    schema: {$ref: '#/definitions/booking_get_200_response'}
+        put:
+            parameters:
+            -   in: body
+                name: booking_put_request_body
+                schema: {$ref: '#/definitions/booking_put_request_body'}
+            - {format: int32, in: path, name: booking_id, required: true, type: integer}
+            responses:
+                '200':
+                    description: booking updated
+                    schema: {$ref: '#/definitions/booking_put_200_response'}
+    /booking/{booking_id}/payment:
+        post:
+            description: "- \tPossible payment options are 'credit', 'paypal'"
+            parameters:
+            -   in: body
+                name: payment_post_request_body
+                schema: {$ref: '#/definitions/payment_post_request_body'}
+            - {format: int32, in: path, name: booking_id, required: true, type: integer}
+            responses:
+                '400':
+                    description: wrong amount
+                    schema: {$ref: '#/definitions/payment_post_400_response'}
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/payment_post_default_response'}
+    /search:
+        get:
+            description: "- \tThe user is able to search for services in the website\
+                \ using servicename and/or category filter, view their general details\n\
+                - \t\tThe user is able to search for services in the website using\
+                \ servicename and/or category filter, view their general details\n\
+                - \t\tThe user is able to search for other user in the website using\
+                \ email, view their general details"
+            parameters:
+            - {in: query, name: servicename, required: false, type: string}
+            - {in: query, name: category, required: false, type: string}
+            - {in: query, name: email, required: false, type: string}
+            responses:
+                '200':
+                    description: user successfully found
+                    schema: {$ref: '#/definitions/search_get_200_response'}
+                '404':
+                    description: the service doesn't exist
+                    schema: {$ref: '#/definitions/search_get_404_response'}
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/search_get_default_response'}
+    /service:
+        delete:
+            parameters:
+            - {in: query, name: servicename, required: false, type: string}
+            - {in: query, name: category, required: false, type: string}
+            responses:
+                '200':
+                    description: deleted!
+                    schema: {$ref: '#/definitions/service_delete_200_response'}
+                '404':
+                    description: the service doesn't exist
+                    schema: {$ref: '#/definitions/service_delete_404_response'}
+        post:
+            parameters:
+            -   in: body
+                name: service_post_request_body
+                schema: {$ref: '#/definitions/service_post_request_body'}
+            responses:
+                '200':
+                    description: Successfully created! !
+                    schema: {$ref: '#/definitions/service_post_200_response'}
+                '404': {description: Not allowed}
+        put:
+            parameters:
+            -   in: body
+                name: service_put_request_body
+                schema: {$ref: '#/definitions/service_put_request_body'}
+            responses:
+                '200':
+                    description: Successfully updated! !
+                    schema: {$ref: '#/definitions/service_put_200_response'}
+                '404':
+                    description: the service doesn't exist
+                    schema: {$ref: '#/definitions/service_put_404_response'}
+    /service/{service_id}:
+        get:
+            parameters:
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            responses:
+                '200':
+                    description: service retrieved
+                    schema: {$ref: '#/definitions/service_get_200_response'}
+                '404':
+                    description: the service doesn't exist
+                    schema: {$ref: '#/definitions/service_get_404_response'}
+    /service/{service_id}/comment:
+        post:
+            parameters:
+            -   in: body
+                name: comment_post_request_body
+                schema: {$ref: '#/definitions/comment_post_request_body'}
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            responses:
+                '404':
+                    description: Can not comment
+                    schema: {$ref: '#/definitions/comment_post_404_response'}
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/comment_post_default_response'}
+    /service/{service_id}/comment/{comment_id}:
+        get:
+            parameters:
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            - {format: int32, in: path, name: comment_id, required: true, type: integer}
+            responses:
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/comment_get_default_response'}
+        put:
+            parameters:
+            -   in: body
+                name: comment_put_request_body
+                required: true
+                schema: {$ref: '#/definitions/comment_put_request_body'}
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            - {format: int32, in: path, name: comment_id, required: true, type: integer}
+            responses:
+                '200': {description: comment updated}
+    /service/{service_id}/rate:
+        post:
+            parameters:
+            -   in: body
+                name: rate_post_request_body
+                schema: {$ref: '#/definitions/rate_post_request_body'}
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            responses:
+                '200':
+                    description: rate successfully added
+                    schema: {$ref: '#/definitions/rate_post_200_response'}
+                '404': {description: service doesn't exist}
+    /service/{service_id}/rate/{rate_id}:
+        put:
+            parameters:
+            -   in: body
+                name: rate_put_request_body
+                required: true
+                schema: {$ref: '#/definitions/rate_put_request_body'}
+            - {format: int32, in: path, name: service_id, required: true, type: integer}
+            - {format: int32, in: path, name: rate_id, required: true, type: integer}
+            responses:
+                '200': {description: rate updated}
+    /user:
+        post:
+            parameters:
+            -   in: body
+                name: user_post_request_body
+                required: true
+                schema: {$ref: '#/definitions/user_post_request_body'}
+            responses:
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/user_post_default_response'}
+    /user/{username}:
+        get:
+            parameters:
+            - &id004 {in: path, name: username, required: true, type: string}
+            responses:
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/user_get_default_response'}
+        put:
+            parameters:
+            - *id004
+            -   in: body
+                name: user_put_request_body
+                required: true
+                schema: {$ref: '#/definitions/user_put_request_body'}
+            responses:
+                default:
+                    description: None
+                    schema: {$ref: '#/definitions/user_put_default_response'}
+produces: [application/json]
+schemes: [https, http]
+securityDefinitions: {}
+swagger: '2.0'
