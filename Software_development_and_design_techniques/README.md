@@ -1,10 +1,6 @@
-1. Φάκελος Resources : Ο φάκελος αυτός περιέχει τα περισσότερα resources απο το πρώτο παραδοτέο, διαφοροποιήμένα ώστε να ταιριάζουν στο tool του κ. Αναστάσιου Δημανίδη.
+##Part 1 - First deliverable
+For the first deliverable you have to record and analyze user requirements of your system, using the methodology you have learned and the
+instructions given to you.
 
-####################################################################################################
-1. UML Διάγραμμα Κλάσεών : 'class_diagram.png'
-
-2. UML Διάγραμμα Καταστάσεων : 'statechart_diagram.png'
-
-3 - 4. Για το τρίτο και τέταρτο ερώτημα χρησιμοποιήθηκε η προσέγγιση του κ. Αναστάσιου Δημανίδη. Τα αποτελέσματα Βρίσκονται στον φάκελο 'output_files'.
-
-5. Το αρχείο zip  που δημιουργήθηκε απο το Swagger Hub και περιέχει τον κώδικα για τον server ονομάζεται tripadvisor-like.zip
+##Part 2 - Second deliverable
+For the 2nd deliverable you will need to specify the RESTful API of the SaaS application that you have analyzed in the first deliverable. You also need to design a UML class diagram and a UML state diagram with the possible transitions to your system. Your API and UML charts should cover all the requirements you recorded in the scenarios you described in the first deliverable.
