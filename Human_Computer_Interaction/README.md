@@ -1,0 +1,2 @@
+# HCI - Human Computer Interaction <br />
+This assignment aims at creating a vibration-based mobile device system. This system will be able to detect (on the road) the protrusions and potholes and sent to a server, the type of anomalies as well as geographic coordinates in a suitable application. This information can be used by the users-drivers to know in real time the existence or not of a dangerous anomaly on the roadway, but also for the employees to know the state of the roads in an area mainly after extreme natural phenomena.

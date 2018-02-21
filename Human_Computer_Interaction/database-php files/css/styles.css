@@ -1,0 +1,67 @@
+.textAlignJustify {
+    text-align: justify;
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Set width to 100% */
+    margin: auto;
+    min-height: 200px;
+}
+
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.h-scroll {
+    /*height: 90vh; /* %-height of the viewport */
+    text-align: right;
+    position: fixed;
+    /*overflow-y: scroll;*/
+}
+
+.affix {
+    z-index: 250;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.affix+.container-fluid {
+    padding-top: 70px;
+}
+
+
+/*table*/
+
+.table th.text-center,
+table td.text-center {
+    text-align: center;
+}
+
+
+/* Set black background color, white text and some padding */
+
+footer {
+    position: fixed;
+    background-color: white;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
