@@ -14,8 +14,8 @@ library(dplyr)          #Data Manipulation
 library(Boruta)         #Feature Importance Analysis
 library(e1071)          # SVM
 library(caret)          # Confusion matrix
-require(pROC)           # ROC curve 
-require(DMwR)           # Oversampling 
+require(pROC)           # ROC curve
+require(DMwR)           # Oversampling
 
 mac <- '/Users/ioanniskatsikavelas/Desktop'
 linux <- '/home/ioannis/Desktop'
@@ -155,7 +155,7 @@ boruta_analysis = Boruta(CervicalCancer ~ ., data=train, maxRuns=200)
 plot(boruta_analysis,las=2,main="Boruta Analysis: Variable Importance")
 as.data.frame(boruta_analysis$finalDecision)
 
-getSelectedAttributes(boruta_analysis, withTentative = F ) # check confirmed variables 
+getSelectedAttributes(boruta_analysis, withTentative = F ) # check confirmed variables
 
 # SVM modelling
 index <- 1:nrow(train)
@@ -168,7 +168,7 @@ svm.all_oversampled <- svm (CervicalCancer ~., data = trainData_Ftest, cost = 10
 #svm.pred <- predict(svm.all, testset[,-33])
 #print(table(pred=svm.pred, true= testset[,33]))
 
-# Tune SVM 
+# Tune SVM
 tc <- tune.control(cross = 10) # For cross validation
 tunedsvm <- tune.svm(CervicalCancer ~., data = trainData, gamma = 2^(-10:10), cost = 2^(1:10), tunecontrol = tc)
 #print(summary(tunedsvm))
@@ -190,14 +190,14 @@ svm.model_boruta_oversampled <- svm(CervicalCancer~ Age + Number.of.sexual.partn
                    Hormonal.Contraceptives+ Hormonal.Contraceptives..years. + IUD +IUD..years. + STDs +
                    STDs..number. + STDs.condylomatosis + STDs.vulvo.perineal.condylomatosis + STDs..Time.since.first.diagnosis +
                    STDs..Time.since.last.diagnosis + Dx.Cancer + Dx.HPV + Dx   , data = trainData_Ftest, cost = 2, gamma = 0.5, cross = 10)
-# Evaluation 
-evaluation <- function(model, data, atype){ 
+# Evaluation
+evaluation <- function(model, data, atype){
   cat("\nConfusion matrix:\n")
-  prediction = predict(model, train, type=atype)
-  xtab = table(prediction, train$CervicalCancer)
+  prediction = predict(model, data, type=atype)
+  xtab = table(prediction, data$CervicalCancer)
   print(xtab)
   cat("\nEvaluation:\n\n")
-  accuracy = sum(prediction == train$CervicalCancer)/length(train$CervicalCancer)
+  accuracy = sum(prediction == data$CervicalCancer)/length(data$CervicalCancer)
   precision = xtab[1,1]/sum(xtab[,1])
   recall = xtab[1,1]/sum(xtab[1,])
   f = 2 * (precision * recall) / (precision + recall)
@@ -216,5 +216,3 @@ evaluation(svm.model_boruta, 'response')
 evaluation(svm.all_oversampled, validationData_Ftest, 'response')
 evaluation(svm.model_tuned, validationData_Ftest, 'response')
 evaluation(svm.model_boruta_oversampled, validationData_Ftest, 'response')
-
-
